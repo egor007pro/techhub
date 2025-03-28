@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechHub - Для программистов и системных администраторов</title>
+    <meta name="description" content="TechHub - профессиональные инструменты и решения для программистов и системных администраторов">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/"><span class="bracket">{</span> TechHub <span class="bracket">}</span></a>
+            </div>
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link active">Главная</a></li>
+                <li><a href="/services" class="nav-link">Услуги</a></li>
+                <li><a href="/tools" class="nav-link">Инструменты</a></li>
+                <li><a href="/404" class="nav-link">Блог</a></li>
+                <li><a href="/about" class="nav-link">Обо мне</a></li>
+                <li><a href="/contact" class="nav-link">Контакты</a></li>
+                <li><a href="#" class="nav-link btn-login">Войти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="glitch" data-text="Технологии будущего">Технологии будущего</h1>
+                    <p class="subtitle">Профессиональные инструменты и решения для программистов и системных администраторов</p>
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="terminal-button red"></span>
+                                <span class="terminal-button yellow"></span>
+                                <span class="terminal-button green"></span>
+                            </div>
+                            <div class="terminal-title">terminal@techhub:~</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="line">
+                                <span class="prompt">$</span> 
+                                <span class="command" id="typed-text"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="/services" class="btn primary">Мои услуги <i class="fas fa-arrow-right"></i></a>
+                        <a href="/tools" class="btn secondary">Инструменты</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-bg">
+                <div class="particles"></div>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">Мои услуги</h2>
+                <div class="services-grid">
+                    <a href="/tools" class="service-card" data-aos="fade-up">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Разработка ПО</h3>
+                        <p>Создание высоконагруженных приложений и микросервисов с использованием современных технологий</p>
+                        <span class="service-link">Подробнее <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="/tools" class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Системное администрирование</h3>
+                        <p>Настройка и поддержка серверной инфраструктуры, мониторинг и обеспечение безопасности</p>
+                        <span class="service-link">Подробнее <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="/tools" class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Облачные решения</h3>
+                        <p>Миграция в облако, настройка AWS, Azure, GCP и оптимизация облачных расходов</p>
+                        <span class="service-link">Подробнее <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="/tools" class="service-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Кибербезопасность</h3>
+                        <p>Аудит безопасности, пентестинг и внедрение защитных мер для вашей инфраструктуры</p>
+                        <span class="service-link">Подробнее <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+                <div class="services-cta">
+                    <a href="/tools" class="btn primary">Все услуги <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="tools" class="tools">
+            <div class="container">
+                <h2 class="section-title">Инструменты</h2>
+                <div class="tools-tabs">
+                    <div class="tabs-nav">
+                        <button class="tab-btn active" data-tab="dev">Разработка</button>
+                        <button class="tab-btn" data-tab="devops">DevOps</button>
+                        <button class="tab-btn" data-tab="sysadmin">Системное администрирование</button>
+                    </div>
+                    <div class="tabs-content">
+                        <div class="tab-pane active" id="dev">
+                            <div class="tools-grid">
+                                <a href="/tools#dev-tools" class="tool-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+                                    <h4>VS Code</h4>
+                                    <p>Мощный редактор кода с расширениями</p>
+                                </a>
+                                <a href="/tools#dev-tools" class="tool-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                                    <h4>Docker</h4>
+                                    <p>Контейнеризация приложений</p>
+                                </a>
+                                <a href="/tools#dev-tools" class="tool-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                                    <h4>Git</h4>
+                                    <p>Система контроля версий</p>
+                                </a>
+                                <a href="/tools#dev-tools" class="tool-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                                    <h4>Node.js</h4>
+                                    <p>JavaScript на сервере</p>
+                                </a>
+                                <a href="/tools#dev-tools" class="tool-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                                    <h4>Python</h4>
+                                    <p>Универсальный язык программирования</p>
+                                </a>
+                                <a href="/tools#dev-tools" class="tool-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                                    <h4>React</h4>
+                                    <p>Библиотека для создания UI</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="devops">
+                            <div class="tools-grid">
+                                <a href="/tools#devops-tools" class="tool-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">
+                                    <h4>Kubernetes</h4>
+                                    <p>Оркестрация контейнеров</p>
+                                </a>
+                                <a href="/tools#devops-tools" class="tool-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins">
+                                    <h4>Jenkins</h4>
+                                    <p>Автоматизация CI/CD</p>
+                                </a>
+                                <a href="/tools#devops-tools" class="tool-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ansible/ansible-original.svg" alt="Ansible">
+                                    <h4>Ansible</h4>
+                                    <p>Управление конфигурациями</p>
+                                </a>
+                                <a href="/tools#devops-tools" class="tool-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform">
+                                    <h4>Terraform</h4>
+                                    <p>Инфраструктура как код</p>
+                                </a>
+                                <a href="/tools#devops-tools" class="tool-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" alt="Prometheus">
+                                    <h4>Prometheus</h4>
+                                    <p>Мониторинг и алертинг</p>
+                                </a>
+                                <a href="/tools#devops-tools" class="tool-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana">
+                                    <h4>Grafana</h4>
+                                    <p>Визуализация метрик</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="sysadmin">
+                            <div class="tools-grid">
+                                <a href="/tools#sysadmin-tools" class="tool-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+                                    <h4>Linux</h4>
+                                    <p>Операционная система</p>
+                                </a>
+                                <a href="/tools#sysadmin-tools" class="tool-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash">
+                                    <h4>Bash</h4>
+                                    <p>Командная оболочка</p>
+                                </a>
+                                <a href="/tools#sysadmin-tools" class="tool-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx">
+                                    <h4>Nginx</h4>
+                                    <p>Веб-сервер и прокси</p>
+                                </a>
+                                <a href="/tools#sysadmin-tools" class="tool-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
+                                    <h4>PostgreSQL</h4>
+                                    <p>Реляционная СУБД</p>
+                                </a>
+                                <a href="/tools#sysadmin-tools" class="tool-card">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">
+                                    <h4>Redis</h4>
+                                    <p>In-memory хранилище данных</p>
+                                </a>
+                                <a href="/tools#sysadmin-tools" class="tool-card">
+                                    <img src="/static/images/wireshark.webp" alt="Wireshark">
+                                    <h4>Wireshark</h4>
+                                    <p>Анализатор сетевого трафика</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tools-cta">
+                    <a href="/tools" class="btn primary">Все инструменты <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog">
+            <div class="container">
+                <h2 class="section-title">Последние статьи</h2>
+                <div class="blog-grid">
+                    <article class="blog-card" data-aos="fade-up">
+                        <div class="blog-image">
+                            <img src="/static/images/blog/docker_optimization.jpeg" alt="Оптимизация Docker-контейнеров">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-tags">
+                                <span class="tag">Docker</span>
+                                <span class="tag">DevOps</span>
+                            </div>
+                            <h3>Оптимизация Docker-контейнеров для продакшена</h3>
+                            <p>Практические советы по оптимизации размера и производительности Docker-контейнеров в production-среде.</p>
+                            <a href="#" class="read-more">Читать далее <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="blog-image">
+                            <img src="/static/images/blog/Kubernetes-security.jpg" alt="Безопасность Kubernetes">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-tags">
+                                <span class="tag">Kubernetes</span>
+                                <span class="tag">Безопасность</span>
+                            </div>
+                            <h3>Безопасность Kubernetes: лучшие практики</h3>
+                            <p>Обзор основных уязвимостей Kubernetes и рекомендации по обеспечению безопасности кластера.</p>
+                            <a href="#" class="read-more">Читать далее <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="blog-image">
+                            <img src="/static/images/blog/linux-security.webp" alt="Защита Linux-серверов">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-tags">
+                                <span class="tag">Linux</span>
+                                <span class="tag">Безопасность</span>
+                            </div>
+                            <h3>Защита Linux-серверов от современных угроз</h3>
+                            <p>Комплексный подход к обеспечению безопасности Linux-серверов в современных условиях.</p>
+                            <a href="#" class="read-more">Читать далее <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="blog-cta">
+                    <a href="/404" class="btn primary">Все статьи <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter" class="newsletter">
+            <div class="container">
+                <div class="newsletter-wrapper">
+                    <div class="newsletter-content">
+                        <h2>Подпишись на мою рассылку</h2>
+                        <p>Получай новые статьи, обзоры инструментов и приглашения на мероприятия прямо на почту(вскоре в telegram)</p>
+                    </div>
+                    <form id="newsletterForm" class="newsletter-form">
+                        <input type="email" placeholder="Email" required>
+                        <button type="submit" class="btn primary">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h2 class="section-title">Связаться со мной</h2>
+                        <p class="contact-desc">Есть вопросы или предложения? Напиши мне, и я свяжусь с тобой в ближайшее время.</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:info@techhub.ru">egorg666good@gmail.com</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Телефон</h4>
+                                    <p><a href="tel:+79991234567">+7 (925) 861-74-64</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Адрес</h4>
+                                    <p>г.Москва</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="https://github.com/egor007pro" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="https://t.me/dontkillmyvibe31006" target="_blank" class="social-link"><i class="fab fa-telegram"></i></a>
+                            <a href="#" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" target="_blank" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+                            <div class="form-group">
+                                <label for="name">Имя</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Тема</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Сообщение</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn primary">Отправить <i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <span class="bracket">{</span> TechHub <span class="bracket">}</span>
+                    </div>
+                    <p>Инструменты и решения для программистов и системных администраторов</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Проект</h4>
+                        <ul>
+                            <li><a href="/about">Обо мне</a></li>
+                            <li><a href="/about#team">Разработчик</a></li>
+                            <li><a href="/about#careers">Путь в разработке</a></li>
+                            <li><a href="/contact">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Услуги</h4>
+                        <ul>
+                            <li><a href="/services#webdev">Веб-разработка</a></li>
+                            <li><a href="/services#python">Python-разработка</a></li>
+                            <li><a href="/services#teaching">Обучение</a></li>
+                            <li><a href="/services#consulting">Консультации</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Ресурсы</h4>
+                        <ul>
+                            <li><a href="/404">Блог</a></li>
+                            <li><a href="/tools#resources">Документация</a></li>
+                            <li><a href="/tools#resources">Обучение</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechHub. Все права защищены.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Условия использования</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Вход в систему</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Пароль</label>
+                    <input type="password" id="loginPassword" name="password" required>
+                </div>
+                <div class="form-group form-checkbox">
+                    <input type="checkbox" id="rememberMe" name="rememberMe">
+                    <label for="rememberMe">Запомнить меня</label>
+                </div>
+                <button type="submit" class="btn primary">Войти</button>
+                <div class="form-footer">
+                    <a href="#" id="forgotPassword">Забыли пароль?</a>
+                    <a href="#" id="registerLink">Регистрация</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="{{url_for('static', filename='main.js')}}"></script>
+</body>
+</html>
